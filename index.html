@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+</head>
+<body class="w3-container">
+	<button class="w3-btn w3-ripple" onclick="programa1()">Pasar de Mbs a MBs</button>
+	<button class="w3-btn w3-ripple w3-red" onclick="programa2()">Porcentaje de utilizacion del ancho de banda</button>
+	<script type="text/javascript">
+	<!--
+	// PROGRAMA
+	function programa1() {
+
+	    //Solicitar que se ingrese el valor.
+	    var F = prompt("Valor en Mbits/s");
+
+	    //Formula.
+	     var Ca = F/8;
+
+	     //Mostrar el valor obtenido en la conversión.
+		
+	     window.alert( F + " Mbits/s son: "+ F + "/8 =" + Ca +  "Mbytes/s");
+		 
+	}
+
+	function programa2() {
+
+	    //Trafico generado. 
+	    /*Comentario
+		  de varias lineas*/
+	    var C = prompt("Tamaño peticiones clientes (Bytes)");
+		 //Respuesta media servidor.
+	    var S = prompt("Respuesta media del servidor(Bytes)");
+		 //Solicitar que se ingrese el valor en grados celsius.
+	    var N = prompt("Numero maximo de peticiones por hora (Bytes)");
+
+	    //paso 1. Trafico generado.
+	     var T = (parseInt(C) + parseInt(S)) * parseInt(N);
+		 
+		 window.alert("Trafico generado:" + T + "Bytes/hora");
+		 
+		 //paso 2. Pasamos de bytes/hora a bytes/segundos
+		 T = T/3600;
+		 
+		 var A = prompt("Ancho de banda contratado(MBits/s)");
+		 
+		 //paso 3. devuelve los bytes/segundo
+		 A = (parseInt(A)*1000000)/8;
+		 
+		 //paso 4
+		 var U = ((T/A)*100).toFixed(2);
+		 
+		 window.alert("Porcentaje de utilizaciu00f3n del ancho de banda:" + U + "%");
+		 console.log("Porcentaje de utilizaciu00f3n del ancho de banda:" + U + "%");
+
+	     //Mostrar el valor obtenido en la conversión en el paso 2.
+	     //window.alert("La temperatura " + C + " expresada en grados Fahrenheit es: "+ F);
+	}
+
+
+	//-->
+	</script>
+</body>
+
+</html>
